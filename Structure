@@ -1,0 +1,15 @@
+api-gateway/
+├── src/
+│   ├── middleware/
+│   │   └── logger.js
+│   ├── routes/
+│   │   └── gatewayRoutes.js
+│   ├── app.js
+│   └── server.js
+├── tests/
+│   └── gateway.test.js
+├── .env.example
+├── .gitignore
+├── Dockerfile
+├── package.json
+└── README.md
