@@ -28,7 +28,7 @@ app.get("/users", async (req, res) => {
 app.post("/users", async (req, res) => {
   try {
     const response = await axios.post(
-      "http://localhost:3001/users",
+      "http://user-service:3001/users",
       req.body
     );
     res.status(response.status).json(response.data);
@@ -52,7 +52,7 @@ app.get("/orders", async (req, res) => {
 app.post("/orders", async (req, res) => {
   try {
     const response = await axios.post(
-      "http://localhost:3002/orders",
+      "http://order-service:3002/orders",
       req.body
     );
     res.status(response.status).json(response.data);
@@ -76,7 +76,7 @@ app.get("/payments", async (req, res) => {
 app.post("/payments", async (req, res) => {
   try {
     const response = await axios.post(
-      "http://localhost:3003/payments",
+      "http://payment-service:3003/payments",
       req.body
     );
     res.status(response.status).json(response.data);
@@ -90,7 +90,7 @@ app.post("/payments", async (req, res) => {
 app.get("/notifications", async (req, res) => {
   try {
     const response = await axios.get(
-      "http://localhost:3004/notifications"
+      "http://notofication-service:3004/notifications"
     );
     res.status(response.status).json(response.data);
   } catch (error) {
