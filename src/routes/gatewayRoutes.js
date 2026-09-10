@@ -1,17 +1,12 @@
 const express = require("express");
-
-const {
-  createProxyMiddleware
-} = require("http-proxy-middleware");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const router = express.Router();
 
 router.use(
   "/users",
   createProxyMiddleware({
-    target:
-      process.env.USER_SERVICE_URL ||
-      "http://localhost:3001",
+    target: "http://localhost:3001",
     changeOrigin: true
   })
 );
@@ -19,9 +14,7 @@ router.use(
 router.use(
   "/orders",
   createProxyMiddleware({
-    target:
-      process.env.ORDER_SERVICE_URL ||
-      "http://localhost:3002",
+    target: "http://localhost:3002",
     changeOrigin: true
   })
 );
@@ -29,9 +22,7 @@ router.use(
 router.use(
   "/payments",
   createProxyMiddleware({
-    target:
-      process.env.PAYMENT_SERVICE_URL ||
-      "http://localhost:3003",
+    target: "http://localhost:3003",
     changeOrigin: true
   })
 );
@@ -39,9 +30,7 @@ router.use(
 router.use(
   "/notifications",
   createProxyMiddleware({
-    target:
-      process.env.NOTIFICATION_SERVICE_URL ||
-      "http://localhost:3004",
+    target: "http://localhost:3004",
     changeOrigin: true
   })
 );
